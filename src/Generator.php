@@ -68,4 +68,11 @@ class Generator
              return self::$metadata[$component->hash().":".$name];
         }
     }
+
+    public static function destroy()
+    {
+        self::$metadata = array();
+        self::$components = array();
+        self::$metadataIndex   = array();
+    }
 }
