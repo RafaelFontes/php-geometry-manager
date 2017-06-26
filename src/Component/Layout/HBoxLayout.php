@@ -55,13 +55,6 @@ class HBoxLayout extends Layout
 
             $rect->setSize($size);
 
-            if ( $child->previousComponent() != null && $child->previousComponent()->parent() != null &&
-                 $child->previousComponent()->parent()->hash() != $component->hash() )
-            {
-                $previousChildRect = $child->previousComponent()->geometry(false);
-                $lastX = $previousChildRect->x() + ( ($previousChildRect->width() - $rect->width()) / 2 );
-            }
-
             $rect->setX( $lastX  );
 
             $lastX += $newWidth + $this->spacing();
