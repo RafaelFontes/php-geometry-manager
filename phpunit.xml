@@ -1,0 +1,28 @@
+<phpunit
+  bootstrap="tests/Bootstrap.php"
+  colors="always"
+  columns="max"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  stopOnError="true"
+  stopOnFailure="true"
+  stopOnIncomplete="true"
+  verbose="true">
+  <testsuites>
+    <testsuite name="Flow">
+      <directory>tests/src</directory>
+    </testsuite>
+  </testsuites>
+  <logging>
+    <log type="coverage-html" target="tests/coverage" lowUpperBound="35"
+        highLowerBound="70"/>
+    <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+  </logging>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">src</directory>
+      <exclude></exclude>
+    </whitelist>
+  </filter>
+</phpunit>
